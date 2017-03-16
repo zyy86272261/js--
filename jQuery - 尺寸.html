@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<!--width() 和 height() 方法-->
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            var txt="";
+            txt+="Width of div: " + $("#div1").width() + "</br>";
+            txt+="Height of div: " + $("#div1").height();
+            $("#div1").html(txt);
+        });
+    });
+</script>
+<div id="div1" style="height:100px;width:300px;padding:10px;margin:3px;border:1px solid blue;background-color:lightblue;"></div>
+<br>
+<button>显示 div 的尺寸</button>
+<p>width() - 返回元素的宽度。</p>
+<p>height() - 返回元素的高度。</p>
+
+<!--innerWidth() 和 innerHeight() 方法-->
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            var txt="";
+            txt+="Width of div: " + $("#div1").width() + "</br>";
+            txt+="Height of div: " + $("#div1").height() + "</br>";
+            txt+="Inner width of div: " + $("#div1").innerWidth() + "</br>";
+            txt+="Inner height of div: " + $("#div1").innerHeight();
+            $("#div1").html(txt);
+        });
+    });
+</script>
+<div id="div1" style="height:100px;width:300px;padding:10px;margin:3px;border:1px solid blue;background-color:lightblue;"></div>
+<br>
+<button>显示 div 的尺寸</button>
+<p>innerWidth() - 返回元素的宽度（包括内边距）。</p>
+<p>innerHeight() - 返回元素的高度（包括内边距）。</p>
+
+<!--outerWidth() 和 outerHeight() 方法-->
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            var txt="";
+            txt+="Width of div: " + $("#div1").width() + "</br>";
+            txt+="Height of div: " + $("#div1").height() + "</br>";
+            txt+="Outer width of div: " + $("#div1").outerWidth() + "</br>";//outerWidth() 方法返回元素的宽度（包括内边距和边框）。
+            txt+="Outer height of div: " + $("#div1").outerHeight();//outerHeight() 方法返回元素的高度（包括内边距和边框）。
+            $("#div1").html(txt);
+        });
+    });
+</script>
+<div id="div1" style="height:100px;width:300px;padding:10px;margin:3px;border:1px solid blue;background-color:lightblue;"></div>
+<br>
+<button>显示 div 的尺寸</button>
+<p>outerWidth() - 返回元素的宽度（包括内边距和边框）。</p>
+<p>outerHeight() - 返回元素的高度（包括内边距和边框）。</p>
+
+
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            var txt="";
+            txt+="Width of div: " + $("#div1").width() + "</br>";
+            txt+="Height of div: " + $("#div1").height() + "</br>";
+            txt+="Outer width of div (margin included): " + $("#div1").outerWidth(true) + "</br>";//outerWidth(true) 方法返回元素的宽度（包括内边距、边框和外边距）。
+            txt+="Outer height of div (margin included): " + $("#div1").outerHeight(true);//outerHeight(true) 方法返回元素的高度（包括内边距、边框和外边距）。
+            $("#div1").html(txt);
+        });
+    });
+</script>
+<div id="div1" style="height:100px;width:300px;padding:10px;margin:3px;border:1px solid blue;background-color:lightblue;"></div>
+<br>
+<button>显示 div 的尺寸</button>
+<p>outerWidth(true) - 返回元素的宽度（包括内边距、边框和外边距）。</p>
+<p>outerHeight(true) - 返回元素的高度（包括内边距、边框和外边距）。</p>
+
+<!--更多的 width() 和 height()-->
+<!--返回文档（HTML 文档）和窗口（浏览器视口）的宽度和高度：-->
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            var txt="";
+            txt+="Document width/height: " + $(document).width();
+            txt+="x" + $(document).height() + "\n";
+            txt+="Window width/height: " + $(window).width();
+            txt+="x" + $(window).height();
+            alert(txt);
+        });
+    });
+</script>
+<button>显示文档和窗口的尺寸</button>
+
+<!--设置指定的 <div> 元素的宽度和高度-->
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            $("#div1").width(320).height(320);
+        });
+    });
+</script>
+<div id="div1" style="height:100px;width:300px;padding:10px;margin:3px;border:1px solid blue;background-color:lightblue;"></div>
+<br>
+<button>调整 div 的尺寸</button>
+</body>
+</html>

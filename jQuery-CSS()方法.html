@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<!--返回 CSS 属性-->
+<script src="/jquery/jquery-1.11.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("button#btn1").click(function(){
+            alert("Background color = " + $("p#1").css("background-color")+
+                  "Background color = " + $("p#2").css("background-color")+
+                  "Background color = " + $("p#3").css("background-color")
+            );
+        });
+    });
+</script>
+<div>
+    <h2>这是标题</h2>
+    <p id="1" style="background-color:#ff0000">这是一个段落。</p>
+    <p id="2" style="background-color:#00ff00">这是一个段落。</p>
+    <p id="3" style="background-color:#0000ff">这是一个段落。</p>
+    <button id="btn1">返回 p 元素的背景色</button>
+</div>
+
+<!--设置 CSS 属性-->
+<script>
+    $(document).ready(function(){
+        $("button#btn2").click(function(){
+            $("div#4 p").css("background-color","yellow");
+        });
+    });
+</script>
+<div id="4">
+<h2>这是标题</h2>
+<p style="background-color:#ff0000">这是一个段落。</p>
+<p style="background-color:#00ff00">这是一个段落。</p>
+<p style="background-color:#0000ff">这是一个段落。</p>
+<p>这是一个段落。</p>
+<button id="btn2">设置 p 元素的背景色</button>
+</div>
+
+<!--设置多个 CSS 属性-->
+<script>
+    $(document).ready(function(){
+        $("button#btn3").click(function(){
+            $("div#5 p").css({"background-color":"yellow","font-size":"200%"});
+        });
+    });
+</script>
+<div id="5">
+<h2>这是标题</h2>
+<p style="background-color:#ff0000">这是一个段落。</p>
+<p style="background-color:#00ff00">这是一个段落。</p>
+<p style="background-color:#0000ff">这是一个段落。</p>
+<p>这是一个段落。</p>
+<button id="btn3">为 p 元素设置多个样式</button>
+</div>
+
+</body>
+</html>

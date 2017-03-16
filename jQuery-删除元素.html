@@ -3,9 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <srcipt type="text/javascript" sre="js\jquery-3.1.1.min.js"></srcipt>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 </head>
 <body>
+<!--remmove()方法-->
+<script>
+    $(document).ready(function(){
+        $("#1").click(function(){
+            $("#div1").remove();//删除被选元素及其子元素
+        });
+    });
+</script>
+<div id="div1" style="height:100px;width:300px;border:1px solid black;background-color:yellow;">
+    This is some text in the div.
+    <p>This is a paragraph in the div.</p>
+    <p>This is another paragraph in the div.</p>
+</div>
+<br>
+<button id="1">删除 div 元素</button>
+
+<!--empty()方法-->
+<script>
+    $(document).ready(function(){
+        $("#2").click(function(){
+            $("#div2").empty();//删除被选元素的子元素
+        });
+        $("#3").click(function(){
+            $("#div2").append(" This is some text in the div. <p>This is a paragraph in the div.</p> <p>This is another paragraph in the div.</p>")
+        });
+    });
+</script>
+<div id="div2" style="height:100px;width:300px;border:1px solid black;background-color:yellow;">
+    This is some text in the div.
+    <p>This is a paragraph in the div.</p>
+    <p>This is another paragraph in the div.</p>
+</div>
+
+<br>
+<button id="2">清空 div 元素</button>
+<button id="3">显示 div 元素</button>
+
+<!--过滤被删除的元素-->
+<script>
+    $(document).ready(function(){
+        $("#4").click(function(){
+            $("p").remove(".italic");//删除class="italic"的所有p元素
+        });
+    });
+</script>
+
+<p>This is a paragraph in the div.</p>
+<p class="italic"><i>This is another paragraph in the div.</i></p>
+<p class="italic"><i>This is another paragraph in the div.</i></p>
+<button id="4">删除 class="italic" 的所有 p 元素</button>
 
 </body>
 </html>
