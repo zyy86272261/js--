@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="jQuery/jquery-3.1.1.js"></script>
+    <style type="text/css">
+body{
+    width: 1000px;
+    text-align:center;
+    margin:0 auto;
+}
+       .left{
+
+           width: 300px;
+           float:left;
+        }
+    </style>
+</head>
+<body >
+<!--fadeIn淡入效果-->
+<script>
+    $(document).ready(function(){
+        $("#button1").click(function(){
+            $("#1 #div1").fadeIn();
+            $("#1 #div2").fadeIn("slow");
+            $("#1 #div3").fadeIn(3000);
+        });
+    });
+</script>
+<div class="left" id="1">
+<p>演示带有不同参数的 fadeIn() 方法。</p>
+<button id="button1">点击这里，使三个矩形淡入</button>
+<br><br>
+<div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div>
+<br>
+<div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div>
+<br>
+<div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+</div>
+
+<!--fadeOut淡出效果-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#button2").click(function(){
+            $("#2 #div1").fadeOut();
+            $("#2 #div2").fadeOut("slow");
+            $("#2 #div3").fadeOut(3000);
+        });
+    });
+</script>
+<div class="left" id="2">
+<p>演示带有不同参数的 fadeOut() 方法。</p>
+<button id="button2">点击这里，使三个矩形淡出</button>
+<br><br>
+<div id="div1" style="width:80px;height:80px;background-color:red;"></div>
+<br>
+<div id="div2" style="width:80px;height:80px;background-color:green;"></div>
+<br>
+<div id="div3" style="width:80px;height:80px;background-color:blue;"></div>
+</div>
+
+<!--fadeToggle淡入淡出效果-->
+<script>
+    $(document).ready(function(){
+        $("#button3").click(function(){
+            $("#3 #div1").fadeToggle();
+            $("#3 #div2").fadeToggle("slow");
+            $("#3 #div3").fadeToggle(3000);
+        });
+    });
+</script>
+<div class="left" id="3">
+    <p>演示带有不同参数的 fadeToggle() 方法。</p>
+    <button id="button3">点击这里，使三个矩形淡入淡出</button>
+    <br><br>
+    <div id="div1" style="width:80px;height:80px;background-color:red;"></div>
+    <br>
+    <div id="div2" style="width:80px;height:80px;background-color:green;"></div>
+    <br>
+    <div id="div3" style="width:80px;height:80px;background-color:blue;"></div>
+</div>
+</body>
+</html>

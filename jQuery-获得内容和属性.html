@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<!--获得元素的文本内容和内容-->
+<script>
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            alert("Text: " + $("#test").text());//获得id=test的元素的文本内容
+        });
+        $("#btn2").click(function(){
+            alert("HTML: " + $("#test").html());//获得id=test的元素的内容（包括HTML标记）
+        });
+    });
+</script>
+<p id="test">这是段落中的<b>粗体</b>文本。</p>
+<button id="btn1">显示文本</button>
+<button id="btn2">显示 HTML</button>
+
+<!--获得元素的表单字段的值-->
+<script>
+    $(document).ready(function(){
+        $("#btn3").click(function(){
+            alert("value:"+$("#test1").val());
+        });
+    });
+</script>
+<p>姓名：<input type="text" id="test1" value="米老鼠"></p>
+<button id="btn3">显示值</button>
+
+<!--获取元素的属性-->
+<script>
+    $(document).ready(function(){
+        $("#btn4").click(function(){
+            alert("href:"+$("#w3s").attr("href"))
+
+        });
+    });
+</script>
+<p ><a href="http://www.w3school.com.cn" id="w3s">W3School.com.cn</a></p>
+<button id="btn4">显示 href 值</button>
+</body>
+</html>

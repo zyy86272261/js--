@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <style type="text/css">
+        body{
+            width: 1000px;
+            text-align: center;
+            margin: 0 auto;;
+        }
+        div.panel,div.panel1,p.flip
+        {
+            margin:0px;
+            padding:5px;
+            text-align:center;
+            background:#e5eecc;
+            border:solid 1px #c3c3c3;
+        }
+        div.panel
+        {
+            height:120px;
+            display:none;
+        }
+        div.panel1{
+            height: 120px;;
+        }
+    </style>
+</head>
+<body>
+<!--滑入效果slideDown代码-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#1 .flip").click(function(){
+            $("#1 .panel").slideDown("slow");
+        });
+    });
+</script>
+<div id="1">
+    <div class="panel">
+        <p>W3School - 领先的 Web 技术教程站点</p>
+        <p>在 W3School，你可以找到你所需要的所有网站建设教程。</p>
+    </div>
+
+    <p class="flip">请点击这里</p>
+</div>
+
+<!--滑出效果slideUp代码-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#2 .flip").click(function(){
+            $("#2 .panel1").slideUp("slow");
+        });
+    });
+</script>
+<div id="2">
+    <div class="panel1">
+        <p>W3School - 领先的 Web 技术教程站点</p>
+        <p>在 W3School，你可以找到你所需要的所有网站建设教程。</p>
+    </div>
+
+    <p class="flip">请点击这里</p>
+</div>
+
+<!--切换滑入滑出效果slideToggle代码-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#3 .flip").click(function(){
+            $("#3 .panel").slideToggle("slow");
+        });
+    });
+</script>
+<div id="3">
+    <div class="panel">
+        <p>W3School - 领先的 Web 技术教程站点</p>
+        <p>在 W3School，你可以找到你所需要的所有网站建设教程。</p>
+    </div>
+
+    <p class="flip">请点击这里</p>
+</div>
+</body>
+</html>

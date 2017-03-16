@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>My First Web Page</h1>
+
+<p id="11">My First Paragraph.</p>
+
+<button onclick="myFunction()">点击这里</button>
+
+<script>
+    function myFunction()
+    {
+        document.getElementById("11").innerHTML="My First JavaScript";
+    }
+</script>
+<br>
+<script>
+    //变量申明-数组
+    var i;
+    var cars = ["Audi","BMW","volvo"];
+
+    for (i=0;i<cars.length;i++)
+    {
+        document.write(cars[i] + "<br>");
+    }
+</script>
+
+</body>
+
+</html>

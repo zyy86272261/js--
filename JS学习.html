@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p>点击下面的按钮，只要 i 小于 5 就一直循环代码块。</p>
+<button onclick="myFunction()">点击这里</button>
+<p id="demo"></p>
+
+<script>
+    function myFunction()
+    {
+
+        var x="", i=0;
+       while (i<5)
+       {
+           i++;
+           if (i==3) continue;
+           x=x+"the name is "+i+"<br>";
+
+
+
+       }
+        document.getElementById("demo").innerHTML=x;
+    }
+</script>
+
+<script>
+    for (var i = 0; i < 3; i++)
+    {
+        setTimeout(function()
+        {
+            console.log(i);
+        }, 0);
+        console.log(i);
+        document.write(i);
+    }
+
+</script>
+</body>
+</html>

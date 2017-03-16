@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <style type="text/css">
+        #panel,#flip
+        {
+            padding:5px;
+            text-align:center;
+            background-color:#e5eecc;
+            border:solid 1px #c3c3c3;
+        }
+        #panel
+        {
+            padding:50px;
+            display:none;
+        }
+    </style>
+</head>
+<body>
+<script>
+    $(document).ready( function(){
+        $("#flip").click(function(){
+            $("#panel").slideDown(5000);
+        });
+        $("#stop").click(function(){
+            $("#panel").stop(stopAll=false,goToEnd=false);
+        });
+    });
+</script>
+<button id="stop">停止滑动</button>
+<div id="flip">点击这里，向下滑动面板</div>
+<div id="panel">Hello world!</div>
+
+<!--使用队列功能动画效果-->
+<script>
+    $(document).ready(function(){
+        $("button#button5").click(function(){
+            var div=$("div#5");
+            div.animate({height:'300px',opacity:'0.4'},"slow");
+            div.animate({width:'300px',opacity:'0.8'},"slow");
+            div.animate({height:'100px',opacity:'0.4'},"slow");
+            div.animate({width:'100px',opacity:'0.8'},"slow");
+        });
+        $("#stop1").click(function(){
+            $("div#5").stop(stopAll=false,goToEnd=false);
+        });
+    });
+</script>
+<div class="left">
+    <button id="button5">开始动画</button>
+    <button id="stop1">停止滑动</button>
+    <p>默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。如需对位置进行操作，记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute。</p>
+    <div id="5" style="background:#98bf21;height:100px;width:100px;position:absolute;">
+        <p  style="position: absolute">动画效果</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+</body>
+</html>

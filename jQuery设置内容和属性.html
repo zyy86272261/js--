@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<!--设置内容-->
+<script>
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            $("#test1").text("Hello world!");
+        });
+        $("#btn2").click(function(){
+            $("#test2").html("<b>Hello world!</b>");
+        });
+        $("#btn3").click(function(){
+            $("#test3").val("Dolly Duck");
+        });
+    });
+</script>
+<p id="test1">这是段落。</p>
+<p id="test2">这是另一个段落。</p>
+<p>Input field: <input type="text" id="test3" value="Mickey Mouse"></p>
+<button id="btn1">设置文本</button>
+<button id="btn2">设置 HTML</button>
+<button id="btn3">设置值</button>
+
+<!--回调函数-->
+<script>
+    $(document).ready(function(){
+        $("#btn4").click(function(){
+            $("#test4").text(function(i,origText){
+                return "Old text: " + origText + " New text: Hello world! (index: " + i + ")";
+            });
+        });
+
+        $("#btn5").click(function(){
+            $("#test5").html(function(i,origText){
+                return "Old html: " + origText + " New html: Hello <b>world!</b> (index: " + i + ")";
+            });
+        });
+
+    });
+</script>
+<p id="test4">这是<b>粗体</b>文本。</p>
+<p id="test5">这是另一段<b>粗体</b>文本。</p>
+<button id="btn4">显示旧/新文本</button>
+<button id="btn5">显示旧/新 HTML</button>
+
+<!--设置属性 - attr()-->
+<script src="/jquery/jquery-1.11.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#btn6").click(function(){
+            $("#w3s").attr({
+                "href" : "http://www.w3school.com.cn/jquery/",
+                "title" : "W3School jQuery 教程"
+            });
+        });
+    });
+</script>
+<p><a href="http://www.w3school.com.cn" id="w3s">W3School.com.cn</a></p>
+<button id="btn6">改变 href 和 title 值</button>
+<p>请把鼠标指针移动到链接上，或者点击该链接，来查看已经改变的 href 值和已经设置的 title 值。</p>
+
+<!--attr() 的回调函数-->
+<script>
+    $(document).ready(function(){
+        $("#btn7").click(function(){
+            $("#w3s1").attr("href", function(i,origValue){
+                return origValue + "/jquery";
+            });
+        });
+    });
+</script>
+<p><a href="http://www.w3school.com.cn" id="w3s1">w3school.com.cn</a></p>
+<button id="btn7">改变 href 值</button>
+<p>请把鼠标指针移动到链接上，或者点击该链接，来查看已经改变的 href 值。</p>
+</body>
+</html>

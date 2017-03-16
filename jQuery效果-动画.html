@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <style>
+        body{
+            width: 1000px;
+            text-align: center;
+            margin:0 auto;
+        }
+        .left{
+
+            width: 300px;
+            float:left;
+        }
+    </style>
+</head>
+<body>
+<!--动画效果-->
+<script>
+    $(document).ready(function(){
+        $("button#button1").click(function(){
+            $("div#1").animate({
+                left:'100px'
+            },
+                    "slow");
+        });
+    });
+</script>
+<div class="left">
+<button id="button1">开始动画</button>
+<p >默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。如需对位置进行操作，记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute。</p>
+<div id="1" style="background:#98bf21;height:100px;width:100px;position:absolute;">
+    <p  style="position: absolute">动画效果</p>
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+<!--操作多个属性动画效果-->
+    <script>
+        $(document).ready(function(){
+            $("button#button2").click(function(){
+                $(" div#2").animate({
+                    left:'250px',
+                    opacity:'0.5',
+                    height:'150px',
+                    width:'150px'
+                });
+            });
+        });
+    </script>
+    <div class="left">
+    <button id="button2">开始动画</button>
+    <p>默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。如需对位置进行操作，记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute。</p>
+    <div id="2"style="background:#98bf21;height:100px;width:100px;position:absolute;">
+        <p  style="position: absolute">动画效果</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    </div>
+<!--使用相对值动画效果-->
+<script>
+    $(document).ready(function(){
+        $("button#button3").click(function(){
+            $("div#3").animate({
+                left:'250px',
+                height:'+=150px',
+                width:'+=150px'
+            });
+        });
+    });
+</script>
+<div class="left">
+<button id="button3">开始动画</button>
+<p>默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。如需对位置进行操作，记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute。</p>
+<div id="3" style="background:#98bf21;height:100px;width:100px;position:absolute;">
+    <p  style="position: absolute">动画效果</p>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+<!--使用预定义的值动画效果-->
+<script>
+    $(document).ready(function(){
+        $("button#button4").click(function(){
+            $("div#4").animate({
+                height:'toggle'
+            });
+        });
+    });
+</script>
+<duv class="left">
+<button id="button4">开始动画</button>
+<p>默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。如需对位置进行操作，记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute。</p>
+<div id="4" style="background:#98bf21;height:100px;width:100px;position:absolute;">
+    <p  style="position: absolute">动画效果</p>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+</duv>
+<!--使用队列功能动画效果-->
+<script>
+    $(document).ready(function(){
+        $("button#button5").click(function(){
+            var div=$("div#5");
+            div.animate({height:'300px',opacity:'0.4'},"slow");
+            div.animate({width:'300px',opacity:'0.8'},"slow");
+            div.animate({height:'100px',opacity:'0.4'},"slow");
+            div.animate({width:'100px',opacity:'0.8'},"slow");
+        });
+    });
+</script>
+<div class="left">
+<button id="button5">开始动画</button>
+<p>默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。如需对位置进行操作，记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute。</p>
+<div id="5" style="background:#98bf21;height:100px;width:100px;position:absolute;">
+    <p  style="position: absolute">动画效果</p>
+</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+<!--使用队列功能动画效果2-->
+<script>
+    $(document).ready(function(){
+        $("button#button6").click(function(){
+            var div=$("div#6");
+            div.animate({left:'100px'},"slow");
+            div.animate({fontSize:'3em'},"slow");
+        });
+    });
+</script>
+<div class="left">
+<button id="button6">开始动画</button>
+<p>默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。如需对位置进行操作，记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute。</p>
+<div id="6" style="background:#98bf21;height:100px;width:200px;position:absolute;">HELLO</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+</body>
+</html>

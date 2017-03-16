@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function person(firstname,lastname,age,eyecolor)
+    {
+        this.firstname=firstname;
+        this.lastname=lastname;
+        this.age=age;
+        this.eyecolor=eyecolor;
+
+        this.changeName=changeName;
+        function changeName(name)//changeName() 函数 name 的值赋给 person 的 lastname 属性。
+        {
+            this.lastname=name;
+        }
+    }
+    myMother=new person("Steve","Jobs",56,"green");
+    myMother.changeName("Ballmer");
+    document.write(myMother.lastname);
+</script>
+<br>
+<button onclick="myFunction()">点击这里</button>
+<p id="demo"></p>
+<script>
+    function myFunction()
+    {
+        var x;
+        var txt="";
+        var person={fname:"Bill",lname:"Gates",age:56,eyecolor:"blue"};
+        for (x in person)
+        {
+            txt=txt + person[x];
+        }
+        document.getElementById("demo").innerHTML=txt;
+    }
+</script>
+</body>
+</html>

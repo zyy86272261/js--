@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<!--jQuery append() 方法(元素结尾插入)-->
+<script>
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            $("p#p1").append(" <b>Appended text</b>.");
+        });
+
+        $("#btn2").click(function(){
+            $("ol#o1").append("<li>Appended item</li>");
+        });
+    });
+</script>
+<p id="p1">This is a paragraph.</p>
+<p id="p1">This is another paragraph.</p>
+<ol id="o1">
+    <li>List item 1</li>
+    <li>List item 2</li>
+    <li>List item 3</li>
+</ol>
+<button id="btn1">追加文本</button>
+<button id="btn2">追加列表项</button>
+
+<!--jQuery prepend() 方法（元素开头插入）-->
+<script>
+    $(document).ready(function(){
+        $("#btn3").click(function(){
+            $("p#p2").prepend("<b>Prepended text</b>. ");
+        });
+        $("#btn4").click(function(){
+            $("ol#o2").prepend("<li>Prepended item</li>");
+        });
+    });
+</script>
+<p id="p2">This is a paragraph.</p>
+<p id="p2">This is another paragraph.</p>
+<ol id="o2">
+    <li>List item 1</li>
+    <li>List item 2</li>
+    <li>List item 3</li>
+</ol>
+<button id="btn3">添加文本</button>
+<button id="btn4">添加列表项</button>
+
+<script>
+    function appendText()
+    {
+        var txt1="<p>Text.</p>";              // 以 HTML 创建新元素
+        var txt2=$("<p></p>").text("Text.");  // 以 jQuery 创建新元素
+        var txt3=document.createElement("p");
+        txt3.innerHTML="Text.";               // 通过 DOM 来创建文本
+        $("p#p3").append(txt1,txt2,txt3).prepend(txt1,txt2,txt3);        // 追加新元素
+    }
+</script>
+<p id="p3">This is a paragraph.</p>
+<button id="btn5" onclick="appendText()">追加文本</button>
+
+<!--jQuery after() 和 before() 方法(在被选元素之前之后插入内容。)-->
+<script>
+    $(document).ready(function(){
+        $("#btn7").click(function(){
+            $("img#img1").before("<b>Before</b>");
+        });
+
+        $("#btn6").click(function(){
+            $("img#img1").after("<i>After</i>");
+        });
+    });
+</script>
+<div>
+<img id="img1" src="http://www.w3school.com.cn/i/eg_w3school.gif" alt="W3School Logo" />
+<br><br>
+<button id="btn6">在图片前面添加文本</button>
+<button id="btn7">在图片后面添加文本</button>
+</div>
+
+<!--通过 after() 和 before() 方法添加若干新元素-->
+<script>
+    function afterText()
+    {
+        var txt1="<b>I </b>";                    // 以 HTML 创建元素
+        var txt2=$("<i></i>").text("love ");     // 通过 jQuery 创建元素
+        var txt3=document.createElement("big");  // 通过 DOM 创建元素
+        txt3.innerHTML="jQuery!";
+        $("img#img2").after(txt1,txt2,txt3);          // 在 img 之后插入新元素
+    }
+</script>
+<div>
+<img id="img2" src="http://www.w3school.com.cn/i/eg_w3school.gif" alt="W3School Logo" />
+<br><br>
+<button onclick="afterText()">在图片后面添加文本</button>
+</div>
+</body>
+</html>

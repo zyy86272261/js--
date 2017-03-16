@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="jQuery\jquery-3.1.1.js"></script>
+
+</head>
+<body>
+<!--hide和show效果的jQUery代码块-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#hide").click(function(){
+            $("p#p1").hide("slow");//"slow"为效果速度快慢
+        });
+        $("#show").click(function(){
+            $("p#p1").show("fast");//"fast"为效果速度快慢
+        });
+    });
+</script>
+<p id="p1">如果点击“隐藏”按钮，我就会消失。</p>
+<button id="hide" type="button">隐藏</button>
+<button id="show" type="button">显示</button>
+
+<div>
+    <h2>效果演示</h2>
+    <!--toggle效果的jQUery代码块-->
+    <script>
+        $(document).ready(function(){
+            $(".flip").click(function(){
+                $("div.panel p").toggle(500);//toggle()为切换元素的可见状态。 如果被选元素可见,则隐藏这些元素,如果被选元素隐藏,则显示这些元素。500为效果速度快慢。
+            });
+        });
+    </script>
+
+    <button class="flip">点击这里，隐藏/显示面板</button>
+    <div class="panel">
+        <p>一寸光阴一寸金，因此，我们为您提供快捷易懂的学习内容。</p>
+        <p>在这里，您可以通过一种易懂的便利的模式获得您需要的任何知识。</p>
+        <p style="display: none;">我原来是被隐藏的哦</p>
+    </div>
+</div>
+
+</body>
+</html>

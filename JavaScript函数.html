@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="myFunction()">点击这里</button>
+<script>
+    function myFunction(name="Bill Gates",job="CEO")
+    {
+        alert("Welcome " + name + ", the " + job);
+    }
+</script>
+<script>
+    var x="5";//x赋值为5
+    function myFunction()
+    {
+        x="6";//x赋值为6
+        return x;//返回x的值
+        x="7"//x赋值为7
+    }
+    document.write(myFunction())//实际结果为6
+
+</script>
+</body>
+</html>

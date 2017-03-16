@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--时间替换显示-->
+<h1 id="1">111</h1>
+<script>
+    document.getElementById("1").innerHTML=Date();
+</script>
+<!--鼠标停留离开事件-->
+<div onmouseover="innerHTML='谢谢'" onmouseout="innerHTML='把鼠标移到上面'" style="background-color:green;width:120px;height:20px;padding:40px;color:#ffffff;">把鼠标移到上面</div>
+
+<!--鼠标点击释放事件-->
+<div onmousedown="mDown(this)" onmouseup="mUp(this)" onclick="mclick(this)"  style="background-color:green;color:#ffffff;width:90px;height:20px;padding:40px;font-size:12px;">请点击这里</div>
+
+<script>
+    function mDown(obj)
+    {
+        obj.style.backgroundColor="#1ec5e5";
+        obj.innerHTML="请释放鼠标按钮"
+    }
+
+    function mUp(obj)
+    {
+        obj.style.backgroundColor="green";
+        obj.innerHTML="请按下鼠标按钮"
+    }
+    function  mclick(obj)
+    {
+        obj.style.backgroundColor="red";
+        obj.innerHTML="完成了整个click事件" 
+    }
+</script>
+
+</body>
+</html>
