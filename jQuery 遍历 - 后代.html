@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <style>
+        .descendants *
+        {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+<!--children()返回每个 <div> 元素的所有直接子元素-->
+<script>
+    $(document).ready(function(){
+        $("div#1").children().css({"color":"red","border":"2px solid red"});
+    });
+</script>
+
+<div id="1" class="descendants" style="width:500px;">div (当前元素)
+    <p>p (子)
+        <span>span (孙)</span>
+    </p>
+    <p>p (child)
+        <span>span (孙)</span>
+    </p>
+</div>
+
+<!--children()返回类名为 "1" 的所有 <p> 元素，并且它们是 <div> 的直接子元素：-->
+<script>
+    $(document).ready(function(){
+        $("div#2").children("p.1").css({"color":"red","border":"2px solid red"});
+    });
+</script>
+
+<div id="2" class="descendants" style="width:500px;">div (当前元素)
+    <p class="1">p (子)
+        <span>span (孙)</span>
+    </p>
+    <p class="2">p (子)
+        <span>span (孙)</span>
+    </p>
+</div>
+
+<!--find() 返回属于 <div> 后代的所有 <span> 元素-->
+<script>
+    $(document).ready(function(){
+        $("div#3").find("span").css({"color":"red","border":"2px solid red"});
+    });
+</script>
+
+<div id="3" class="descendants" style="width:500px;">div (current element)
+    <p>p (子)
+        <span>span (孙)</span>
+    </p>
+    <p>p (child)
+        <span>span (孙)</span>
+    </p>
+</div>
+
+<!--find() 返回属于 <div> 后代的所有元素-->
+<script>
+    $(document).ready(function(){
+        $("div#4").find("*").css({"color":"red","border":"2px solid red"});
+    });
+</script>
+
+<div id="4" class="descendants" style="width:500px;">div (当前元素)
+    <p>p (子)
+        <span>span (孙)</span>
+    </p>
+    <p>p (child)
+        <span>span (孙)</span>
+    </p>
+</div>
+</body>
+</html>
