@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<!--jQuery first() 方法-->
+<script>
+    $(document).ready(function () {
+        $("div#1 p").first().css({"color":"red","background-color":"blue"});//first() 方法返回被选元素的首个元素。
+    })
+</script>
+<h1>欢迎来到我的主页1</h1>
+<div id="1">
+    <p>这是 div 中的一个段落。</p>
+
+    <p>这是 div 中的另一个段落。</p>
+</div id="1">
+<p>这也是段落。</p>
+<!--jQuery last() 方法-->
+<h1>欢迎来到我的主页2</h1>
+<script>
+    $(document).ready(function(){
+        $("div#2 p").last().css("background-color","yellow");//last() 方法返回被选元素的最后一个元素。
+    });
+</script>
+<div id="2">
+    <p>这是 div 中的一个段落。</p>
+</div>
+
+<div id="2">
+    <p>这是 div 中的另一个段落。</p>
+</div>
+
+<p>这也是段落。</p>
+
+<!--jQuery eq() 方法-->
+<script>
+    $(document).ready(function(){
+        $("div#3 p").eq(3).css("background-color","yellow");//eq() 方法返回被选元素中带有指定索引号的元素。
+    });
+</script>
+<div id="3">
+<h1>欢迎来到我的主页3</h1>
+<p>我是唐老鸭 (index 0)。</p>
+<p>唐老鸭 (index 1)。</p>
+<p>我住在 Duckburg (index 2)。</p>
+<p>我最好的朋友是米老鼠 (index 3)。</p>
+</div>
+
+<!--jQuery filter() 方法-->
+<script>
+    $(document).ready(function(){
+        $("div#4 p").filter(".intro").css("background-color","yellow");//filter() 方法允许您规定一个标准。不匹配这个标准的元素会被从集合中删除，匹配的元素会被返回。
+    });
+</script>
+<div id="4">
+    <h1>欢迎来到我的主页4</h1>
+    <p>我是唐老鸭。</p>
+    <p class="intro">我住在 Duckburg。</p>
+    <p class="intro">我爱 Duckburg。</p>
+    <p>我最好的朋友是 Mickey。</p>
+</div>
+
+<!--jQuery not() 方法-->
+<script>
+    $(document).ready(function(){
+        $("div#5 p").not(".intro").css("background-color","yellow");//not() 方法返回不匹配标准的所有元素。
+    });
+</script>
+<div id="5">
+    <h1>欢迎来到我的主页5</h1>
+    <p>我是唐老鸭。</p>
+    <p class="intro">我住在 Duckburg。</p>
+    <p class="intro">我爱 Duckburg。</p>
+    <p>我最好的朋友是 Mickey。</p>
+</div>
+</body>
+</html>

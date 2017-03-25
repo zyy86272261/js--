@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <style>
+        .siblings *
+        {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body class="siblings">
+
+<!--siblings() 方法返回被选元素的所有同胞元素-->
+<script>
+    $(document).ready(function(){
+        $("h2#1").siblings().css({"color":"red","border":"2px solid red"});//返回属于 <h2> 的所有同胞元素
+    });
+</script>
+<div >div (父)
+    <p>p</p>
+    <span>span</span>
+    <h2 id="1">h2</h2>
+    <h3>h3</h3>
+    <p>p</p>
+</div>
+
+<!--siblings() 方法 返回属于 <h2> 的同胞元素的所有 <p> 元素-->
+<script>
+    $(document).ready(function(){
+        $("h2#2").siblings("p").css({"color":"red","border":"2px solid red"});
+    });
+</script>
+<div>div (父)
+    <p>p</p>
+    <span>span</span>
+    <h2 id="2">h2</h2>
+    <h3>h3</h3>
+    <p>p</p>
+</div>
+
+<!--jQuery next() 方法-->
+<script>
+    $(document).ready(function(){
+        $("h2#3").next().css({"color":"red","border":"2px solid red"});//返回<h2> 的下一个同胞元素
+    });
+</script>
+<div>div (父)
+    <p>p</p>
+    <span>span</span>
+    <h2 id="3">h2</h2>
+    <h3>h3</h3>
+    <p>p</p>
+</div>
+
+<!--jQuery nextAll() 方法-->
+<script>
+    $(document).ready(function(){
+        $("h2#4").nextAll().css({"color":"red","border":"2px solid red"});//返回 <h2> 的所有跟随的同胞元素
+    });
+</script>
+<div>div (父)
+    <p>p</p>
+    <span>span</span>
+    <h2 id="4">h2</h2>
+    <h3>h3</h3>
+    <p>p</p>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $("h2#5").nextUntil("h6").css({"color":"red","border":"2px solid red"});
+    });
+</script>
+<div>div (父)
+    <p>p</p>
+    <span>span</span>
+    <h2 id="5">h2</h2>
+    <h3>h3</h3>
+    <h4>h4</h4>
+    <h5>h5</h5>
+    <h6>h6</h6>
+    <p>p</p>
+</div>
+</body>
+</html>

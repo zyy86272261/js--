@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <style>
+        .ancestors *
+        {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+
+</head>
+<body class="ancestors">body (曾曾祖父)
+<!--jQuery parent() 方法
+<script>
+        $(document).ready(function(){
+            $("span").parent().css({"color":"red","border":"2px solid red"});
+        });
+    </script>
+    -->
+
+
+<div class="ancestors">
+    <div style="width:500px;">div (曾祖父)
+        <ul>ul (祖父)
+            <li>li (直接父)
+                <span>span</span>
+            </li>
+        </ul>
+    </div>
+
+    <div style="width:500px;">div (祖父)
+        <p>p (直接父)
+            <span>span</span>
+        </p>
+    </div>
+</div>
+
+<!--jQuery parents() 方法
+<script>
+    $(document).ready(function(){
+        $("span").parents().css({"color":"red","border":"2px solid red"});
+    });
+</script>-->
+
+<div style="width:500px;">div (曾祖父)
+    <ul>ul (祖父)
+        <li>li (直接父)
+            <span>span</span>
+        </li>
+    </ul>
+</div>
+<!-- 最外围的红色边框，在 body 元素之前，是 html 元素（也是祖先）。 -->
+
+<!--返回所有 <span> 元素的所有祖先，并且它是 <ul> 元素
+<script>
+    $(document).ready(function(){
+        $("span").parents("ul").css({"color":"red","border":"2px solid red"});
+    });
+</script>
+-->
+<div style="width:500px;">div (曾祖父)
+    <ul>ul (祖父)
+        <li>li (直接父)
+            <span>span</span>
+        </li>
+    </ul>
+</div>
+
+<!--jQuery parentsUntil() 方法-->
+<script>
+    $(document).ready(function(){
+        $("span").parentsUntil("div").css({"color":"red","border":"2px solid red"});
+    });
+</script>
+<div style="width:500px;">div (曾祖父)
+    <ul>ul (祖父)
+        <li>li (直接父)
+            <span>span</span>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
